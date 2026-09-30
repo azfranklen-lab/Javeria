@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Javeria 🎂💗</title>
+<meta name="theme-color" content="#ff6fa5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#fff0f6; --petal:#ffd1e3; --rose:#ff6fa5; --berry:#c2185b; --cocoa:#5b2a42; --gold:#f6c177; --cream:#fff8fb;
+  --display:'Fraunces',Georgia,serif; --body:'Quicksand',system-ui,sans-serif; --script:'Dancing Script',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--cocoa);background:linear-gradient(180deg,#fff0f6 0%,#ffe0ee 45%,#fff0f6 100%);overflow-x:hidden;line-height:1.7}
+body.locked{overflow:hidden}
+button{font-family:inherit;cursor:pointer;border:0}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+
+/* floating hearts layer */
+#floaters{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.floater{position:absolute;bottom:-40px;opacity:.75;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
+
+.btn{background:linear-gradient(135deg,var(--rose),var(--berry));color:#fff;font-weight:700;font-size:1.05rem;padding:.9rem 1.8rem;border-radius:999px;box-shadow:0 10px 26px rgba(194,24,91,.35);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 32px rgba(194,24,91,.4)}
+.btn.ghost{background:#fff;color:var(--berry);box-shadow:0 6px 18px rgba(194,24,91,.15)}
+
+/* ---------- INTRO FORM ---------- */
+#gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1rem;background:radial-gradient(circle at 30% 20%,#ffd1e3,#ff9ec4 60%,#ff6fa5);transition:opacity .9s,transform .9s}
+#gate.gone{opacity:0;transform:scale(1.08);pointer-events:none}
+.letter{width:min(520px,100%);background:var(--cream);border-radius:28px;padding:2rem 1.6rem;box-shadow:0 30px 70px rgba(91,42,66,.35);position:relative;animation:pop .9s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes pop{from{transform:scale(.6) rotate(-4deg);opacity:0}}
+.letter h2{font-family:var(--display);font-style:italic;font-size:1.7rem;text-align:center;color:var(--berry)}
+.letter .seal{position:absolute;top:-28px;left:50%;translate:-50% 0;font-size:3rem;animation:beat 1.4s infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+.field{margin-top:1rem}
+.field label{display:block;font-weight:700;font-size:.85rem;color:var(--berry);margin-bottom:.25rem}
+.box{background:#fff;border:2px solid var(--petal);border-radius:16px;padding:.8rem 1rem;min-height:3rem;font-size:1.05rem}
+.box.tall{min-height:8.5rem}
+.caret::after{content:"▍";color:var(--rose);animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+#openBtn{margin:1.4rem auto 0;display:block;opacity:0;pointer-events:none;transform:translateY(10px);transition:.6s}
+#openBtn.show{opacity:1;pointer-events:auto;transform:none}
+
+/* ---------- HERO ---------- */
+section{position:relative;z-index:2}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:5rem 1.2rem 3rem;overflow:hidden}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,9vw,5.6rem);line-height:1.05;color:var(--berry)}
+.hero .name{font-family:var(--script);font-size:clamp(3.6rem,16vw,9rem);line-height:1;background:linear-gradient(90deg,#ff6fa5,#c2185b,#ff9ec4,#ff6fa5);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;display:block;margin:.2rem 0}
+@keyframes shine{to{background-position:300% 0}}
+.age{display:inline-grid;place-items:center;width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#ffb3d1);color:#fff;font-family:var(--display);font-size:3.6rem;font-weight:600;box-shadow:0 14px 34px rgba(246,193,119,.6),inset 0 0 0 6px rgba(255,255,255,.55);margin:1rem 0;animation:wob 3s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(6deg) scale(1.06)}}
+.hero p.sub{font-size:1.2rem;max-width:30ch;margin:0 auto 1.6rem}
+.balloon{position:absolute;bottom:-160px;width:70px;height:88px;border-radius:50% 50% 48% 48%;animation:float 11s ease-in infinite;opacity:.9}
+.balloon::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:70px;background:rgba(91,42,66,.35)}
+.balloon::before{content:"";position:absolute;left:14px;top:12px;width:14px;height:22px;border-radius:50%;background:rgba(255,255,255,.55);rotate:20deg}
+@keyframes float{0%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-70vh) rotate(5deg)}100%{transform:translateY(-135vh) rotate(-4deg)}}
+.scroll-hint{position:absolute;bottom:1.2rem;left:50%;translate:-50% 0;font-size:1.6rem;animation:bob 1.6s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* ---------- SECTIONS ---------- */
+.wrap{max-width:980px;margin:0 auto;padding:4.5rem 1.2rem}
+h2.title{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.9rem,6vw,3rem);color:var(--berry);text-align:center;margin-bottom:.4rem}
+p.lead{text-align:center;max-width:46ch;margin:0 auto 2rem}
+
+/* cake */
+.stage{background:linear-gradient(180deg,#fff,#ffe6f0);border-radius:36px;padding:1.5rem 1rem 2rem;box-shadow:0 24px 60px rgba(194,24,91,.18);text-align:center;position:relative;overflow:hidden}
+#cakeSvg{width:min(430px,100%);height:auto;overflow:visible}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick .18s ease-in-out infinite alternate;transition:transform .5s,opacity .5s}
+.flame.off{transform:scale(0);opacity:0;animation:none}
+@keyframes flick{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.88,1.12) rotate(4deg)}}
+#flameHide{opacity:0;transition:opacity .4s}
+#flameHide.on{opacity:1}
+.smoke{opacity:0;fill:#cfc4c9}
+.smoke.go{animation:smoke 2.2s ease-out forwards}
+@keyframes smoke{0%{opacity:.7;transform:translateY(0) scale(.5)}100%{opacity:0;transform:translateY(-70px) scale(2)}}
+#knife{transform:translateY(-130px);opacity:0;transition:transform 1.1s cubic-bezier(.5,0,.3,1),opacity .4s}
+#knife.down{opacity:1;transform:translateY(62px)}
+#knife.out{opacity:0;transform:translateY(-130px)}
+#slice{transition:transform 1.3s cubic-bezier(.3,1.3,.5,1)}
+#slice.moved{transform:translate(58px,10px) rotate(7deg)}
+.caption{font-family:var(--script);font-size:1.9rem;color:var(--berry);min-height:3rem;margin:.4rem 0 1rem}
+.row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+/* message */
+.note{background:rgba(255,255,255,.85);border-radius:32px;padding:2.2rem 1.6rem;box-shadow:0 22px 55px rgba(194,24,91,.15);border:2px dashed var(--petal)}
+.note p{margin-bottom:1.1rem;font-size:1.06rem;opacity:0;transform:translateY(14px);transition:opacity .8s,transform .8s}
+.note p.in{opacity:1;transform:none}
+.note .big{font-family:var(--display);font-size:1.4rem;color:var(--berry);font-weight:600}
+.note .end{font-family:var(--display);font-size:1.25rem;text-align:center;color:var(--berry);font-weight:600}
+
+/* AI */
+.ai-grid{display:grid;gap:1.4rem;grid-template-columns:1fr}
+@media(min-width:860px){.ai-grid{grid-template-columns:1.15fr .85fr}}
+.panel{background:#fff;border-radius:28px;padding:1.4rem;box-shadow:0 18px 44px rgba(194,24,91,.14)}
+.panel h3{font-family:var(--display);font-size:1.35rem;color:var(--berry);margin-bottom:.2rem}
+.panel small{display:block;opacity:.7;margin-bottom:.8rem}
+#chat{height:320px;overflow-y:auto;background:var(--blush);border-radius:20px;padding:.9rem;display:flex;flex-direction:column;gap:.55rem}
+.msg{max-width:84%;padding:.6rem .9rem;border-radius:18px;font-size:.98rem;animation:msgin .35s ease both}
+@keyframes msgin{from{opacity:0;transform:translateY(8px) scale(.96)}}
+.msg.bot{background:#fff;border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 3px 10px rgba(194,24,91,.1)}
+.msg.me{background:linear-gradient(135deg,var(--rose),var(--berry));color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.typing span{display:inline-block;width:7px;height:7px;margin:0 2px;background:var(--rose);border-radius:50%;animation:dot 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{transform:translateY(-6px)}}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.7rem 0}
+.chip{background:var(--petal);color:var(--berry);font-weight:700;font-size:.85rem;padding:.4rem .8rem;border-radius:999px}
+.chip:hover{background:var(--rose);color:#fff}
+.inrow{display:flex;gap:.5rem}
+input[type=text],textarea{flex:1;width:100%;border:2px solid var(--petal);border-radius:16px;padding:.7rem 1rem;font:inherit;color:var(--cocoa);background:#fff}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--rose)}
+textarea{resize:vertical;min-height:90px}
+.send{background:var(--berry);color:#fff;border-radius:16px;padding:0 1.1rem;font-weight:700}
+#genOut{background:var(--blush);border-radius:20px;padding:1rem;min-height:140px;margin:.6rem 0 1rem;white-space:pre-wrap}
+.wishlist{margin-top:1rem;display:grid;gap:.6rem}
+.wish{background:var(--blush);border-radius:16px;padding:.7rem 1rem;animation:msgin .4s both}
+.wish b{color:var(--berry)}
+.ai-reply{margin-top:.8rem;background:var(--blush);border-radius:16px;padding:.8rem 1rem;display:none}
+.ai-reply.show{display:block;animation:msgin .4s both}
+
+footer{text-align:center;padding:3rem 1rem 5rem;font-family:var(--script);font-size:1.8rem;color:var(--berry);position:relative;z-index:2}
+#musicBtn{position:fixed;right:14px;top:14px;z-index:70;width:48px;height:48px;border-radius:50%;background:#fff;font-size:1.3rem;box-shadow:0 8px 20px rgba(194,24,91,.3)}
+.star{position:fixed;font-size:2rem;z-index:80;pointer-events:none;animation:starfly 2.2s ease-out forwards}
+@keyframes starfly{to{transform:translateY(-70vh) scale(1.6) rotate(200deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="locked">
+
+<div id="floaters"></div>
+<canvas id="confetti"></canvas>
+<button id="musicBtn" aria-label="Music on or off" title="Music">🎵</button>
+
+<!-- ===== Intro: typed wish form ===== -->
+<div id="gate">
+  <div class="letter">
+    <div class="seal">💌</div>
+    <h2>Birthday Wish Form</h2>
+    <div class="field"><label>To</label><div class="box" id="fTo"></div></div>
+    <div class="field"><label>Wish</label><div class="box tall" id="fWish"></div></div>
+    <button class="btn" id="openBtn">Send wish &amp; open surprise 🎁</button>
+  </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div id="balloons"></div>
+  <div>
+    <h1>Happy Birthday</h1>
+    <span class="name">Javeria</span>
+    <div class="age" id="age">0</div>
+    <p class="sub">Aaj ka din sirf aapke naam 💗</p>
+    <div class="row">
+      <a href="#cake"><button class="btn">Cake cut karein 🎂</button></a>
+    </div>
+  </div>
+  <div class="scroll-hint">⌄</div>
+</section>
+
+<!-- ===== Cake ===== -->
+<section id="cake">
+  <div class="wrap">
+    <h2 class="title">Cake Cutting Time</h2>
+    <p class="lead">Ek button dabayen, baaki sab khud ho jayega: candles, dua, phoonk aur cake cutting ✨</p>
+    <div class="stage">
+      <svg id="cakeSvg" viewBox="0 -70 320 340" role="img" aria-label="Birthday cake with candles">
+        <defs>
+          <linearGradient id="gTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb3d1"/><stop offset="1" stop-color="#ff8fbb"/></linearGradient>
+          <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9ec4"/><stop offset="1" stop-color="#ff6fa5"/></linearGradient>
+          <linearGradient id="gBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff80b0"/><stop offset="1" stop-color="#e84a8c"/></linearGradient>
+          <clipPath id="clipBody"><rect x="-40" y="-70" width="245" height="340"/></clipPath>
+          <clipPath id="clipSlice"><rect x="205" y="-70" width="140" height="340"/></clipPath>
+          <g id="cakeG">
+            <rect x="30" y="160" width="240" height="60" rx="12" fill="url(#gBot)"/>
+            <rect x="55" y="105" width="190" height="56" rx="10" fill="url(#gMid)"/>
+            <rect x="80" y="55" width="140" height="51" rx="10" fill="url(#gTop)"/>
+            <path d="M80 55h140v12q-10 18-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0z" fill="#fff"/>
+            <path d="M55 105h190v12q-9.5 18-19 0t-19 0t-19 0t-19 0t-19 0t-19 0t-19 0t-19 0t-19 0t-19 0z" fill="#fff"/>
+            <path d="M30 160h240v12q-10 18-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0t-20 0z" fill="#fff"/>
+            <g fill="#fff"><circle cx="70" cy="200" r="4"/><circle cx="110" cy="205" r="4"/><circle cx="150" cy="200" r="4"/><circle cx="190" cy="206" r="4"/><circle cx="240" cy="200" r="4"/><circle cx="95" cy="135" r="3.5"/><circle cx="150" cy="140" r="3.5"/><circle cx="215" cy="135" r="3.5"/></g>
+            <g fill="#f6c177"><circle cx="50" cy="190" r="3.5"/><circle cx="130" cy="192" r="3.5"/><circle cx="220" cy="190" r="3.5"/><circle cx="125" cy="135" r="3"/><circle cx="185" cy="138" r="3"/><circle cx="110" cy="90" r="3"/><circle cx="190" cy="90" r="3"/></g>
+            <g>
+              <rect x="97" y="25" width="6" height="30" rx="2" fill="#fff"/><rect x="117" y="25" width="6" height="30" rx="2" fill="#f6c177"/><rect x="137" y="25" width="6" height="30" rx="2" fill="#fff"/><rect x="157" y="25" width="6" height="30" rx="2" fill="#f6c177"/><rect x="177" y="25" width="6" height="30" rx="2" fill="#fff"/>
+              <path d="M97 33l6 4M97 43l6 4M137 33l6 4M137 43l6 4M177 33l6 4M177 43l6 4" stroke="#ff6fa5" stroke-width="2"/>
+            </g>
+          </g>
+        </defs>
+        <ellipse cx="150" cy="224" rx="145" ry="20" fill="#fff" stroke="#ffd1e3" stroke-width="3"/>
+        <g clip-path="url(#clipBody)"><use href="#cakeG"/></g>
+        <g id="slice" clip-path="url(#clipSlice)"><use href="#cakeG"/></g>
+        <g id="flames">
+          <g id="flameHide">
+            <ellipse class="flame" cx="100" cy="16" rx="5" ry="9" fill="#ffd54a"/>
+            <ellipse class="flame" cx="120" cy="16" rx="5" ry="9" fill="#ffb300"/>
+            <ellipse class="flame" cx="140" cy="16" rx="5" ry="9" fill="#ffd54a"/>
+            <ellipse class="flame" cx="160" cy="16" rx="5" ry="9" fill="#ffb300"/>
+            <ellipse class="flame" cx="180" cy="16" rx="5" ry="9" fill="#ffd54a"/>
+          </g>
+        </g>
+        <g id="smokes">
+          <circle class="smoke" cx="100" cy="12" r="6"/><circle class="smoke" cx="120" cy="12" r="6"/><circle class="smoke" cx="140" cy="12" r="6"/><circle class="smoke" cx="160" cy="12" r="6"/><circle class="smoke" cx="180" cy="12" r="6"/>
+        </g>
+        <g id="knife">
+          <rect x="196" y="-70" width="20" height="44" rx="8" fill="#ff6fa5"/>
+          <path d="M201 -26h10v236l-5 10l-5 -10z" fill="#eef1f5" stroke="#b8c0cc" stroke-width="1.5"/>
+        </g>
+      </svg>
+      <div class="caption" id="caption">Ready? 🎀</div>
+      <div class="row">
+        <button class="btn" id="startCake">Start the celebration 🎉</button>
+        <button class="btn ghost" id="replayCake" style="display:none">Dobara cut karein 🔁</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Message ===== -->
+<section id="message">
+  <div class="wrap">
+    <h2 class="title">Dil Se, Sirf Aapke Liye</h2>
+    <p class="lead">Scroll karte jayen, har line ek ek karke aayegi 🌷</p>
+    <div class="note" id="note">
+      <p class="big">🌸✨ Happy Birthday to my most special, sweetest and BEST PUPHO everrr! 🎂💗🥹✨</p>
+      <p>Meri pyari Puphooo 💕🌷 aaj ka din mere liye bhi bohat special hai, kyunki aaj meri life ki un sabse pyaari personalities mein se ek ka birthday hai jo mere liye sirf meri Pupho nahi, balkay meri best friend, meri comfort person aur meri happiness ka ek bohat beautiful part hain 🥹💗🫶🏻</p>
+      <p>Aap un logon mein se hain jinke saath waqt guzarna hamesha special lagta hai 🌸✨ Aapki baatein, aapka care karna, aapka pyaar aur aapka woh apna sa andaaz dil ko bohat sukoon deta hai 🥺💕 Aapke saath main bina kisi hesitation ke apni baatein share kar sakti hoon, aur honestly, ye bond mere liye bohat precious hai 🎀🤍</p>
+      <p>Meri favourite Pupho, thank you for always being so loving, caring and understanding 🫶🏻🌷 Aapne hamesha mujhe itna pyaar diya hai ke kabhi kabhi lagta hai ke main kitni lucky hoon ke mujhe aap jaisi Pupho mili 🥹💗✨ Aapka mere liye hona itself ek blessing hai 🤍🌸</p>
+      <p>Main dil se dua karti hoon ke Allah aapki zindagi ko hamesha khushiyon, sukoon, sehat, barkat aur endless blessings se bhar de 🤲🏻💗✨ Aapki har achi dua qabool ho, aapki har mushkil aasaan ho aur aapke chehre ki smile hamesha aisi hi beautiful rahe 🌷🥹</p>
+      <p>Allah aapko hamesha apni hifazat mein rakhe aur aapko har buri cheez se door rakhe 🤲🏻🤍</p>
+      <p>Aur haan, meri best Puphooo 😭😂💗 aapko officially ek aur saal aur zyada amazing hone ki mubarakbaad! 🙈🎀 Aap hamesha aisi hi cute, loving, caring aur thori si pagal si rehna because that's exactly what makes you YOU 😭😂💕✨</p>
+      <p>I hope you know how deeply loved and appreciated you are 🥹💗 Aap mere liye bohat special hain aur main genuinely chahti hoon ke humari ye beautiful bonding hamesha aisi hi rahe 🌸🫶🏻</p>
+      <p>Once again, happiest birthday to my BEST PUPHO, my favourite person and one of the most precious people in my life! 🎂👑💗✨</p>
+      <p>Love youuu sooo muchhh Puphooo 😭💗🫂🌷<br>May your smile never fade, your heart always stay happy, and your life always be filled with beautiful moments 🎀✨🤍</p>
+      <p class="end">HAPPIEST BIRTHDAYYYYY MERI PYAARI PUPHOOOOO! 🎂🥳💗🌸🫶🏻</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI corner ===== -->
+<section id="ai">
+  <div class="wrap">
+    <h2 class="title">Smart Birthday Corner</h2>
+    <p class="lead">Puphoo Bot se baat karein, nayi wish banayein, ya apni wish likh kar bhej dein ✨</p>
+    <div class="ai-grid">
+      <div class="panel">
+        <h3>🤖 Puphoo Bot</h3>
+        <small>Dua, shayari, joke ya tareef, kuch bhi maangein</small>
+        <div id="chat" aria-live="polite"></div>
+        <div class="chips" id="chips"></div>
+        <div class="inrow"><input type="text" id="chatIn" placeholder="Kuch likhein..." aria-label="Message"><button class="send" id="chatSend">Send</button></div>
+      </div>
+      <div class="panel">
+        <h3>✨ Wish Maker</h3>
+        <small>Har dafa ek nayi birthday wish</small>
+        <div id="genOut">Neeche button dabayen 💗</div>
+        <div class="row"><button class="btn" id="genBtn">Nayi wish banao</button><button class="btn ghost" id="copyBtn">Copy</button></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:1.4rem">
+      <h3>🌠 Make a Wish</h3>
+      <small>Dil mein jo bhi hai likh dein, sitara ban kar aasman tak jayega</small>
+      <textarea id="wishIn" placeholder="Meri wish hai ke..."></textarea>
+      <div class="row" style="margin-top:.8rem"><button class="btn" id="wishBtn">Wish bhejein 🌟</button></div>
+      <div class="ai-reply" id="wishReply"></div>
+      <div class="wishlist" id="wishList"></div>
+    </div>
+  </div>
+</section>
+
+<footer>Made with love for Javeria 💗🌸</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const rand = a => a[Math.floor(Math.random() * a.length)];
+
+/* ================= Floating hearts (automatic) ================= */
+const floaters = $('#floaters');
+const fl = ['💗','🌸','💖','✨','🌷','🎀','💕','🩷'];
+function spawnFloater(){
+  const e = document.createElement('div');
+  e.className = 'floater';
+  e.textContent = rand(fl);
+  e.style.left = Math.random()*100 + 'vw';
+  e.style.fontSize = (14 + Math.random()*22) + 'px';
+  e.style.animationDuration = (7 + Math.random()*7) + 's';
+  floaters.appendChild(e);
+  setTimeout(() => e.remove(), 15000);
+}
+setInterval(spawnFloater, 700);
+
+/* ================= Confetti ================= */
+const cv = $('#confetti'), cx = cv.getContext('2d');
+let parts = [];
+function sizeCv(){ cv.width = innerWidth; cv.height = innerHeight; }
+addEventListener('resize', sizeCv); sizeCv();
+const cols = ['#ff6fa5','#ffd1e3','#c2185b','#f6c177','#ffffff','#ff9ec4','#ffb3d1'];
+function burst(x = innerWidth/2, y = innerHeight/2, n = 140){
+  for(let i=0;i<n;i++){
+    const a = Math.random()*Math.PI*2, s = 4 + Math.random()*9;
+    parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-5,w:6+Math.random()*7,h:4+Math.random()*6,c:rand(cols),r:Math.random()*6,vr:(Math.random()-.5)*.4,life:140+Math.random()*80,heart:Math.random()<.2});
+  }
+  if(!running) loop();
+}
+let running = false;
+function loop(){
+  running = true;
+  cx.clearRect(0,0,cv.width,cv.height);
+  parts = parts.filter(p => p.life > 0);
+  for(const p of parts){
+    p.vy += .22; p.vx *= .992; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life--;
+    cx.save(); cx.translate(p.x,p.y); cx.rotate(p.r); cx.fillStyle = p.c; cx.globalAlpha = Math.min(1,p.life/40);
+    if(p.heart){ cx.font = '18px serif'; cx.fillText('💗',0,0); } else cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+    cx.restore();
+  }
+  if(parts.length) requestAnimationFrame(loop); else { running = false; cx.clearRect(0,0,cv.width,cv.height); }
+}
+function rain(ms = 4000){
+  const t = setInterval(() => burst(Math.random()*innerWidth, -10, 18), 160);
+  setTimeout(() => clearInterval(t), ms);
+}
+
+/* ================= Music (Happy Birthday melody, built in the browser) ================= */
+let ac, musicOn = false, musicTimer;
+const N = {G4:392,A4:440,B4:493.88,C5:523.25,D5:587.33,E5:659.25,F5:698.46,G5:783.99};
+const tune = [['G4',.75],['G4',.25],['A4',1],['G4',1],['C5',1],['B4',2],['G4',.75],['G4',.25],['A4',1],['G4',1],['D5',1],['C5',2],['G4',.75],['G4',.25],['G5',1],['E5',1],['C5',1],['B4',1],['A4',2],['F5',.75],['F5',.25],['E5',1],['C5',1],['D5',1],['C5',2]];
+function playTune(){
+  if(!ac) ac = new (window.AudioContext || window.webkitAudioContext)();
+  if(ac.state === 'suspended') ac.resume();
+  let t = ac.currentTime + .1; const beat = .48;
+  for(const [n,d] of tune){
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'triangle'; o.frequency.value = N[n];
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.18,t+.03); g.gain.exponentialRampToValueAtTime(.001,t+d*beat);
+    o.connect(g).connect(ac.destination); o.start(t); o.stop(t+d*beat+.05);
+    t += d*beat;
+  }
+  return (t - ac.currentTime) * 1000;
+}
+function musicStart(){
+  musicOn = true; $('#musicBtn').textContent = '🎵';
+  const go = () => { if(!musicOn) return; const len = playTune(); musicTimer = setTimeout(go, len + 3500); };
+  go();
+}
+function musicStop(){ musicOn = false; clearTimeout(musicTimer); $('#musicBtn').textContent = '🔇'; }
+$('#musicBtn').onclick = () => musicOn ? musicStop() : musicStart();
+
+/* ================= Intro typed form ================= */
+async function typeInto(el, text, speed = 45){
+  el.classList.add('caret'); el.textContent = '';
+  for(const ch of text){ el.textContent += ch; await sleep(speed); }
+  el.classList.remove('caret');
+}
+(async () => {
+  await sleep(900);
+  await typeInto($('#fTo'), 'Javeria 💗 (Meri pyari Pupho)');
+  await typeInto($('#fWish'), 'Happy Birthday Javeria! 🎂✨ Aaj ka din aapke naam, bohat sara pyaar aur ek chhota sa surprise aapke liye... 🌸💗', 38);
+  $('#openBtn').classList.add('show');
+})();
+$('#openBtn').onclick = () => {
+  $('#gate').classList.add('gone');
+  document.body.classList.remove('locked');
+  musicStart();
+  burst(innerWidth/2, innerHeight/2, 200);
+  rain(3500);
+  countAge();
+  setTimeout(() => $('#gate').remove(), 1000);
+};
+
+/* ================= Hero: balloons + age counter ================= */
+const bc = ['#ff6fa5','#ff9ec4','#ffb3d1','#c2185b','#f6c177','#ff80b0','#ffd1e3'];
+for(let i=0;i<9;i++){
+  const b = document.createElement('div');
+  b.className = 'balloon';
+  b.style.left = (4 + i*11) + '%';
+  b.style.background = `radial-gradient(circle at 35% 30%, #fff8, ${bc[i%bc.length]} 55%)`;
+  b.style.animationDelay = (i*1.3) + 's';
+  b.style.animationDuration = (9 + Math.random()*6) + 's';
+  $('#balloons').appendChild(b);
+}
+function countAge(){
+  let n = 0; const el = $('#age');
+  const t = setInterval(() => { n++; el.textContent = n; if(n >= 25) clearInterval(t); }, 70);
+}
+
+/* ================= Cake cutting (fully automatic) ================= */
+const cap = $('#caption');
+let busy = false;
+async function say(t){ cap.textContent = t; }
+async function cakeShow(){
+  if(busy) return; busy = true;
+  $('#startCake').style.display = 'none'; $('#replayCake').style.display = 'none';
+  // reset
+  $('#slice').classList.remove('moved'); $('#knife').className = '';
+  document.querySelectorAll('.flame').forEach(f => f.classList.remove('off'));
+  document.querySelectorAll('.smoke').forEach(s => s.classList.remove('go'));
+  await say('Candles jal rahi hain... 🕯️'); await sleep(600);
+  $('#flameHide').classList.add('on');
+  if(!musicOn) musicStart();
+  await sleep(2500);
+  await say('Ab dil mein ek pyaari wish maangein... 🤲🏻✨'); await sleep(3500);
+  await say('Phoonk maarein... 3, 2, 1 🌬️'); await sleep(2200);
+  document.querySelectorAll('.flame').forEach(f => f.classList.add('off'));
+  document.querySelectorAll('.smoke').forEach((s,i) => setTimeout(() => s.classList.add('go'), i*80));
+  burst(innerWidth/2, innerHeight*.45, 120);
+  await say('Wish ho gayi! 🥹💗'); await sleep(2200);
+  await say('Ab cake cutting... 🔪🎂');
+  $('#knife').classList.add('down'); await sleep(1400);
+  $('#slice').classList.add('moved'); await sleep(600);
+  $('#knife').classList.remove('down'); $('#knife').classList.add('out');
+  burst(innerWidth*.3, innerHeight*.5, 100); burst(innerWidth*.7, innerHeight*.5, 100);
+  rain(3500);
+  await say('Happy Birthday Javeria! 🎉💗');
+  $('#flameHide').classList.remove('on');
+  busy = false; $('#replayCake').style.display = '';
+}
+$('#startCake').onclick = cakeShow;
+$('#replayCake').onclick = cakeShow;
+// Start automatically when the cake section scrolls into view (only once)
+let cakeAuto = false;
+new IntersectionObserver((es) => { if(es[0].isIntersecting && !cakeAuto && !document.body.classList.contains('locked')){ cakeAuto = true; setTimeout(() => { if(!busy && $('#startCake').style.display !== 'none') cap.textContent = 'Button dabayen, baaki sab automatic hai 🎀'; }, 400); } }, {threshold:.5}).observe($('#cake'));
+
+/* ================= Message reveals one by one ================= */
+const paras = [...document.querySelectorAll('#note p')];
+const po = new IntersectionObserver((es) => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); po.unobserve(e.target);
+    if(e.target.classList.contains('end')) { burst(innerWidth/2, innerHeight*.6, 160); } } });
+}, {threshold:.35});
+paras.forEach(p => po.observe(p));
+
+/* ================= Puphoo Bot (runs in the browser, no server) ================= */
+const chat = $('#chat');
+function addMsg(t, who){
+  const m = document.createElement('div'); m.className = 'msg ' + who; m.textContent = t;
+  chat.appendChild(m); chat.scrollTop = chat.scrollHeight; return m;
+}
+const bank = {
+  dua: ['Ya Allah, Javeria ki zindagi ko sehat, sukoon aur barkat se bhar de. Uski har jaiz dua qabool farma. Ameen 🤲🏻💗','Allah aapko hamesha khush rakhe, har buri nazar aur har mushkil se bachaye. Ameen 🤍','Aapki har subah roshan aur har raat pur sukoon ho. Allah aapke ghar aur dil ko khushiyon se bhar de. Ameen 🌷'],
+  shayari: ['Chaand bhi sharma jaye aapki muskurahat dekh kar,\nDuniya ki har khushi mile aapko dua kar kar 🌙💗','Phoolon ne kaha khushboo aap se seekhi hai,\nTaaron ne kaha roshni aap se milti hai ✨🌸','Har saal ka ye din aapke naam ho,\nKhushiyan hi khushiyan har gaam ho 🎀'],
+  joke: ['Pupho ki age ka sawal mat poochna... wo sirf 25 ki hain, hamesha! 😂','Cake ne kaha: pehle photo, phir khana. Pupho ne kaha: pehle khana! 🙈🎂','Birthday pe diet? Woh kal se shuru hogi, jaise hamesha hoti hai 😭😂'],
+  tareef: ['Aap sach mein bohat pyaari, caring aur loving hain. Aap jaisi Pupho naseeb walon ko milti hain 🥹💗','Aapki smile ghar ki sabse khoobsurat roshni hai 🌷✨','Aap sirf Pupho nahi, comfort person bhi hain. Ye sab ke naseeb mein nahi hota 🫶🏻'],
+  cake: ['Cake ready hai! Upar wale section mein jaa kar cut kar lein, pehla slice Pupho ka 🎂💗','Strawberry, chocolate ya vanilla? Hum to sab ka ek ek slice lenge 😋'],
+  gift: ['Sab se bada tohfa ye hai ke aap humari zindagi mein hain 🎁💗','Gift to milega hi, lekin pehle dua aur pyaar. Wo free hain aur hamesha rahenge 🤍'],
+  hello: ['Assalam o Alaikum Pupho! 🌸 Aaj aapka din hai, bolein kya chahiye?','Hello hello! Birthday girl aa gayi 🎀 Dua, shayari, joke ya tareef, kya sunogi?'],
+  thanks: ['Arrey aapka shukriya kaisa, ye to meri duty hai 🥹💗','Mention not Pupho 🎀 Aap bas khush rahein!']
+};
+const keys = {
+  dua:['dua','pray','ameen','allah','blessing'], shayari:['shayari','poem','poetry','sher','lines'],
+  joke:['joke','funny','hasa','hasao','mazak','mazaq'], tareef:['tareef','compliment','pyari','cute','love','acha','achi'],
+  cake:['cake','candle','slice'], gift:['gift','tohfa','present'], hello:['salam','hello','hi','hey','assalam'], thanks:['thanks','shukriya','thank','shukria']
+};
+const fallback = ['Hmm, ye to mujhe nahi aata 😅 Par dua, shayari, joke ya tareef zaroor sunaunga!','Aapki baat pyaari lagi 💗 Chalein, kuch aur poochein ya neeche wale buttons try karein?','Main thora chhota sa bot hoon 🎀 Mujhe dua, shayari, joke aur tareef aati hai!'];
+function reply(text){
+  const t = text.toLowerCase();
+  for(const k in keys) if(keys[k].some(w => new RegExp('(^|\\W)' + w).test(t))) return rand(bank[k]);
+  return rand(fallback);
+}
+async function ask(text){
+  if(!text.trim()) return;
+  addMsg(text, 'me');
+  const tp = addMsg('', 'bot'); tp.innerHTML = '<span class="typing"><span></span><span></span><span></span></span>';
+  await sleep(700 + Math.random()*700);
+  tp.textContent = ''; const r = reply(text);
+  for(const ch of r){ tp.textContent += ch; chat.scrollTop = chat.scrollHeight; await sleep(16); }
+  if(/dua|ameen|shayari|wish/.test(text.toLowerCase())) burst(innerWidth*.5, innerHeight*.6, 40);
+}
+addMsg('Assalam o Alaikum Javeria! 🌸 Main Puphoo Bot hoon. Aaj aapki birthday hai, bolein kya sunna hai?', 'bot');
+[['🤲🏻 Dua do','dua do'],['📜 Shayari','shayari sunao'],['😂 Joke','joke sunao'],['💗 Tareef','meri tareef karo'],['🎂 Cake','cake']].forEach(([l,q]) => {
+  const c = document.createElement('button'); c.className = 'chip'; c.textContent = l; c.onclick = () => ask(q); $('#chips').appendChild(c);
+});
+$('#chatSend').onclick = () => { const v = $('#chatIn').value; $('#chatIn').value = ''; ask(v); };
+$('#chatIn').addEventListener('keydown', e => { if(e.key === 'Enter') $('#chatSend').click(); });
+
+/* ================= Wish Maker ================= */
+const gA = ['Meri pyari Pupho','Dunya ki sabse best Pupho','Meri comfort person Pupho','Sweetest Javeria Pupho'];
+const gB = ['aaj ka din aapki smile ki tarah roshan ho','aapki zindagi phoolon ki tarah mehakti rahe','aapke dil ko hamesha sukoon mile','aapki har dua qabool ho','aapke hissay mein sirf khushiyan aayein'];
+const gC = ['Allah aapko sehat aur barkat de 🤲🏻','Hamesha aise hi cute aur thori si pagal rehna 😂','Aap jaisi Pupho milna meri luck hai 🥹','Ye 25th birthday sab se yaadgaar ho 🎂','Aap ka saath mere liye ek blessing hai 🤍'];
+const gD = ['Love youuu sooo much 💗','Happiest birthday 🎉','Hamesha khush rahein 🌷','Dher sara pyaar 🫶🏻'];
+function makeWish(){
+  return `🌸 ${rand(gA)},\nDua hai ke ${rand(gB)}.\n${rand(gC)}\n\n${rand(gD)} ✨`;
+}
+$('#genBtn').onclick = async () => {
+  const out = $('#genOut'), w = makeWish(); out.textContent = '';
+  for(const ch of w){ out.textContent += ch; await sleep(14); }
+  burst(innerWidth/2, innerHeight*.6, 50);
+};
+$('#copyBtn').onclick = () => { navigator.clipboard && navigator.clipboard.writeText($('#genOut').textContent); $('#copyBtn').textContent = 'Copied ✔'; setTimeout(() => $('#copyBtn').textContent = 'Copy', 1500); };
+
+/* ================= Make a Wish (saved in this browser) ================= */
+function loadWishes(){ try{ return JSON.parse(localStorage.getItem('jv_wishes') || '[]'); }catch(e){ return []; } }
+function renderWishes(){
+  const box = $('#wishList'); box.innerHTML = '';
+  loadWishes().slice().reverse().forEach(w => { const d = document.createElement('div'); d.className = 'wish'; d.innerHTML = '<b>🌟</b> '; d.appendChild(document.createTextNode(w)); box.appendChild(d); });
+}
+const wishReplies = ['Wish sitara ban kar aasman tak pohanch gayi ✨ Inshallah poori hogi!','Allah aapki har pyaari wish qabool kare 🤲🏻💗','Aapki wish sun li gayi 🌠 Bas yaqeen rakhein, sab acha hoga!'];
+$('#wishBtn').onclick = async () => {
+  const v = $('#wishIn').value.trim(); if(!v) return;
+  const all = loadWishes(); all.push(v);
+  try{ localStorage.setItem('jv_wishes', JSON.stringify(all.slice(-20))); }catch(e){}
+  $('#wishIn').value = '';
+  for(let i=0;i<6;i++){ const s = document.createElement('div'); s.className = 'star'; s.textContent = rand(['🌟','✨','💫','⭐']); s.style.left = (30 + Math.random()*40) + 'vw'; s.style.top = '75vh'; s.style.animationDelay = (i*.15) + 's'; document.body.appendChild(s); setTimeout(() => s.remove(), 3000); }
+  const r = $('#wishReply'); r.classList.remove('show'); await sleep(500); r.textContent = rand(wishReplies); r.classList.add('show');
+  renderWishes(); burst(innerWidth/2, innerHeight*.7, 70);
+};
+renderWishes();
+</script>
+</body>
+</html>
